@@ -11,7 +11,17 @@ import dashboardRoutes from "./routes/dashboardRoutes.js";
 
 const app = express();
 
-app.use(cors());
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://insurance-management-system-six-pied.vercel.app/",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Serve uploaded files
