@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://insurance-management-system-six-pied.vercel.app",
+      "https://insurance-management-system-auko-978qsni2i-snzx.vercel.app"
     ],
     credentials: true,
   })
