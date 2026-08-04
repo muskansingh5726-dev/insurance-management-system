@@ -11,9 +11,17 @@ import {
   FaHeadset,
 } from "react-icons/fa";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  const navigate = useNavigate();
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+
+  navigate("/");
+};
   const menu = [
     {
       title: "Dashboard",
@@ -35,6 +43,11 @@ function Sidebar() {
       icon: <FaFileContract />,
       path: "/policies",
     },
+     {
+    title: "Add Policy",
+    icon: <FaPlusCircle />,
+    path: "/add-policy",
+  },
     {
       title: "Claims",
       icon: <FaFileInvoiceDollar />,
@@ -175,8 +188,10 @@ function Sidebar() {
           </div>
 
         </div>
-
-        <button className="mt-5 w-full flex justify-center items-center gap-3 bg-red-500 hover:bg-red-600 py-3 rounded-xl text-white font-semibold transition">
+<button
+  onClick={handleLogout}
+  className="mt-5 w-full flex justify-center items-center gap-3 bg-red-500 hover:bg-red-600 py-3 rounded-xl text-white font-semibold transition"
+>
 
           <FaSignOutAlt />
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import API from "../api/client";
 import {
   FaUsers,
@@ -67,14 +67,7 @@ async function fetchDashboard() {
     icon: <FaFileInvoiceDollar />,
   },
 ];
-  <div className="grid lg:grid-cols-2 gap-7 mt-10">
-
-  <RevenueChart />
-
-  <RecentActivities />
-
-</div>
-
+ 
   return (
     <div className="flex bg-slate-950 min-h-screen">
 
@@ -126,6 +119,7 @@ async function fetchDashboard() {
         </div>
 
         {/* Cards */}
+        
 
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-7">
 
@@ -175,6 +169,14 @@ async function fetchDashboard() {
           ))}
 
         </div>
+         <div className="grid lg:grid-cols-2 gap-7 mt-10">
+
+  <RevenueChart />
+
+  <RecentActivities />
+
+</div>
+
 
       </main>
 
