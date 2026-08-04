@@ -13,10 +13,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://insurance-management-system-auko-978qsni2i-snzx.vercel.app"
-    ],
+   origin: [
+  "http://localhost:5173",
+  "https://insurance-management-system-auko.vercel.app",
+  "https://insurance-management-system-auko-2puttxum7-snzx.vercel.app",
+],
     credentials: true,
   })
 );
